@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cakes</title>
+    <link rel="icon" type="image/x-icon" href="pts.png">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #150e17; /* Dark purple-ish background */
+            font-family: serif;
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;       /* Added padding for better spacing */
+        }
+
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+            color: #6a487d;     /* Purple accent color */
+        }
+
+        h3 {
+            color: #ddd;          /* Light text color */
+            text-align: center;  /* Center the text under images */
+            margin-top: 10px;    /* Add space above the text */
+        }
+
+        .row {
+            margin: 8px -16px;
+        }
+
+        .row,
+        .row > .column {
+            padding: 8px;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;   /* Added rounded corners */
+        }
+        
+        a:hover {
+            background-color: #382a3f; /* Darker purple for hover */
+        }
+
+        .next, .back {
+            background-color: #955799; /* Lighter purple for buttons */
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .next {
+            float: right;
+        }
+        
+        .back {
+            font-size: 30px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;       /* Maintain aspect ratio */
+            border: 2px solid #382a3f; /* Add a subtle border to images */
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 900px) {
+            .column {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="row">
+            <div class="column">
+                <img src="IMG_7063.JPG" alt="pastry" style="width:100%">
+                <h3>Dulche de Leche Banana Cake</h3>
+            </div>
+            <div class="column">
+                <img src="IMG_7074.JPG" alt="pastry" style="width:100%">
+                <h3>Lotus Biscoff Cheesecake</h3>
+            </div>
+            <div class="column">
+                <img src="IMG_7070.JPG" alt="pastry" style="width:100%">
+                <h3>Praline Layer Cake</h3>
+            </div>
+        </div>  
+
+        <div class="row">
+            <div class="column">
+                <img src="IMG_7056.JPG" alt="pastry" style="width:100%">
+                <h3>Classic Raspberry Cheesecake</h3>
+            </div>
+            <div class="column">
+                <img src="IMG_7061.JPG" alt="pastry" style="width:100%">
+                <h3>Carrot Cake with Nuts</h3>
+            </div>
+            <div class="column">
+                <img src="IMG_7068.JPG" alt="pastry" style="width:100%">
+                <h3> Red-Velvet Cheesecake</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img src="IMG_7076.JPG" alt="pastry" style="width:100%">
+                <h3>Chocolate Cake with Raspberries</h3>
+            </div>
+            <div class="column">
+                <img src="IMG_7078.JPG" alt="pastry" style="width:100%">
+                <h3>Chocolate & Pistachio Naked Layer Cake</h3>
+            </div>
+            <div class="column">
+                <img src="IMG_7059.JPG" alt="pastry" style="width:100%">
+                <h3>Nutella Cookie Dough Cheesecake</h3>
+            </div>
+        </div>
+
+        <a href="Home.html" class="back">&laquo; Back</a>
+        <a href="Pies.html" class="next">Next &raquo;</a>
+    </div> </body>
+</html>
+

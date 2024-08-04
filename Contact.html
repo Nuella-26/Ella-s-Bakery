@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="pts.png">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function validateForm() {
+            // ... (Your validation script remains the same)
+        }
+    </script>
+    <style>
+        body {
+            background-color: #150e17;        /* Dark purple-ish background */
+            font-family: serif;
+            color: #ddd;                      /* Light text color */
+            display: flex;                   /* Center form vertically and horizontally */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #6a487d;                     /* Purple accent color */
+            font-family: "Gilda Display", serif;
+            font-size: 55px;
+            text-align: center;
+            margin-bottom: 30px;               /* Add space below the heading */
+        }
+
+        .container {
+            width: 70%;
+            border-radius: 5px;
+            background-color: #382a3f;        /* Darker purple container */
+            padding: 20px;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #555;            /* Darker border */
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            font-family: serif;
+            background-color: #251c28;         /* Darker input background */
+            color: #ddd;                      /* Light text color in inputs */
+        }
+
+        input[type=submit] {
+            background-color: #955799;        /* Purple button */
+            color: white;
+            font-family: serif;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #6a487d;        /* Darker purple on hover */
+        }
+
+        .back {
+            color: #955799;                     /* Purple link color */
+            margin-top: 20px;                   /* Add space above the back link */
+            text-decoration: underline;
+            font-size: 20px;
+            display: block;                    /* Make it a block element */
+            text-align: center;                /* Center the back link */
+        }
+    </style>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        <h1>Contact Us</h1>
+
+        <div class="container">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="E-mail" placeholder="Your E-mail..">
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <a href="Home.html" class="back">&laquo; Back</a>
+</body>
+</html>
+

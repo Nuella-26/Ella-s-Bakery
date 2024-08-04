@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pastries by E</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="pts.png">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+  background: #150e17;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  font-family: serif;
+  color: #251c28;
+  font-size: 25px;
+}
+
+.header img {
+  float: left;
+  width: 140%;
+  height: 100%;
+  padding-right: 30px;
+  margin-bottom: 30px;
+}
+
+/* Style the top navigation bar */
+.sidebar {
+  margin: 0;
+  padding: 5px;
+  width: 200px;
+  background-color: #251c28;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.sidebar a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.gallery{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: white;
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-auto-rows :250px;
+  grid-auto-flow: column;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 33.3%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+/* Style the topnav links */
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 6px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.sidebar a:hover:not(.active), 
+.dropdown-container a:hover {
+  padding: 5px;  /* Adjust the value as needed */
+  background-color: #FCFAF1;
+  color: #4e4e4e;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.sidebar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 17px;
+  color: #4e4e4e;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  margin-top: 20px;
+}
+.footer h2 {
+  color: #4e4e4e;
+  }
+
+.fa {
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #4e4e4e;
+  color: white;
+  padding-left: 8px;
+  position: fixed;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px){
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+  /* Adjust columns for smaller screens */
+@media screen and (max-width: 700px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+<div class="header">
+<img src="Patisserie.png" alt="logo"/>
+<p>  </p>
+<p>  </p>
+<p>  </p>
+</div> 
+
+  <a href="Home.html">Home</a>
+  <a href="About us.html">Our Story</a>
+  <button class="dropdown-btn">Menu
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="Gourmet Pastry.html">Gourmet Pastry</a>
+    <a href="Bread menu.html">Breads</a>
+    <a href="Cakes.html">Cakes & Pies</a>
+  </div>
+  <a href="Staff.html">Meet the Team</a>
+  <a href="Contact.html">Contact Us</a>
+  
+<div class="fa" style="position: fixed; bottom: 0; float: left; margin: 0px;">  
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  <a href="#" class="fa fa-pinterest"></a>
+</div>
+</div>
+
+
+<div class="content">
+<div class="row"> 
+  <div class="column">
+    <img src="IMG_5956.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5954.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5953.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5957.jpeg" alt="pastry" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="IMG_5827.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5833.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5940.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5849.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5939.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5852.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5835.jpeg" alt="pastry" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="IMG_5959.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5955.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5958.jpeg" alt="pastry" style="width:100%">
+    <img src="IMG_5961.jpeg" alt="pastry" style="width:100%">
+  </div>
+</div>
+<div class="footer"><footer>Copyright &copy; 2022 Patisserie by E</footer>
+</div>
+</div>
+<style>
+.home-button {
+    display: block;      /* Make it a block-level element */
+    margin: 20px auto;   /* Center the button horizontally */
+    padding: 10px 20px;  /* Add some padding for visual comfort */
+    background-color: #955799; /* Use a matching purple color */
+    color: white;         /* White text for contrast */
+    text-decoration: none;
+    border: none;          /* Remove default border */
+    font-family: serif; /* Match your other font */
+    font-size: 20px;    /* Adjust font size as needed */
+    border-radius: 5px;  /* Add rounded corners (optional) */
+}
+
+.home-button:hover {
+    background-color: #6a487d; /* Slightly darker purple on hover */
+    cursor: pointer;       /* Indicate it's clickable */
+}
+</style>
+ <script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>
+
+
